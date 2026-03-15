@@ -1,0 +1,164 @@
+/* -- Floating Item Detail Modal ---------------------------------------------- */
+/* Backdrop and close-button base styles are in modal-base.css. */
+
+.item-modal {
+  background: var(--bg-main);
+  border: 1px solid var(--accent-blue-text);
+  border-radius: 6px;
+  width: 380px;
+  max-width: 92vw;
+  max-height: 85vh;
+  overflow-y: auto;
+  box-shadow: 0 8px 32px var(--modal-shadow);
+  animation: modal-in 0.15s ease-out;
+}
+
+.item-modal-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-bottom: 2px solid var(--border-main);
+}
+
+.item-modal-name {
+  flex: 1;
+  color: var(--text-accent);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* Close button base styles in modal-base.css */
+
+.item-modal-body {
+  padding: 10px 12px;
+}
+
+.item-modal-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 8px;
+}
+
+/* (modal-sparkline removed � chart now in dedicated graph modal) */
+
+/* -- Graph Modal ------------------------------------------------------------ */
+/* Backdrop, opacity transition, and close button base styles in modal-base.css. */
+
+.graph-modal-backdrop {
+  z-index: 9999;
+}
+
+.graph-modal {
+  background: var(--bg-main);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  width: 92%;
+  max-width: 520px;
+  max-height: 85vh;
+  overflow-y: auto;
+  box-shadow: var(--shadow-lg);
+}
+
+.graph-modal-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+}
+.graph-modal-title {
+  flex: 1;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--text-main);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.graph-modal-body {
+  padding: 12px;
+}
+
+.graph-modal-canvas {
+  display: block;
+  width: 100%;
+  height: 180px;
+  margin-bottom: 12px;
+  border-radius: 4px;
+  background: var(--bg-elevated);
+}
+
+.graph-history-status {
+  display: none;
+  text-align: center;
+  padding: 8px 4px;
+  font-size: 11px;
+  color: var(--text-muted, #888);
+}
+.graph-history-status.visible {
+  display: block;
+}
+.graph-history-status button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--accent-blue, #569cd6);
+  text-decoration: underline;
+  font-size: 11px;
+  padding: 0 2px;
+}
+.graph-history-status button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.graph-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.graph-stat-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 12px;
+}
+.graph-stat-row:last-child {
+  border-bottom: none;
+}
+.graph-stat-label {
+  color: var(--text-muted);
+}
+.graph-stat-value {
+  font-weight: 600;
+  color: var(--text-bright);
+}
+
+/* -- Graph modal history-range dropdown ------------------------------------ */
+
+.graph-modal-range-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.graph-modal-range-row label {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.graph-modal-range-row select {
+  padding: 2px 6px;
+  font-size: 11px;
+  background: var(--bg-input);
+  color: var(--text-main);
+  border: 1px solid var(--border-input);
+  border-radius: var(--radius-sm);
+}

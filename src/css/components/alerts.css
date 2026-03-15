@@ -1,0 +1,186 @@
+/* ------------------------------------------------------------------------------
+   Modal � Price Alert Inputs
+   ------------------------------------------------------------------------------ */
+
+.alert-inputs {
+  margin-top: 8px;
+  padding: 8px 10px;
+  background: var(--bg-muted);
+  border-radius: 4px;
+  border: 1px solid var(--border-section);
+}
+
+.alert-inputs-title {
+  margin: 0 0 6px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-heading);
+}
+
+.alert-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.alert-row:last-child {
+  margin-bottom: 0;
+}
+
+.alert-row label {
+  font-size: 10px;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.alert-row input[type="number"] {
+  width: 120px;
+  padding: 2px 6px;
+  font-size: 10px;
+  background: var(--bg-input);
+  border: 1px solid var(--border-input);
+  color: var(--text-main);
+  border-radius: var(--radius-sm);
+}
+
+.alert-row input[type="number"]::placeholder {
+  color: var(--text-muted);
+  opacity: 0.6;
+}
+
+/* ------------------------------------------------------------------------------
+   Notification Bell & Panel
+   ------------------------------------------------------------------------------ */
+
+.notif-bell-btn {
+  position: relative;
+  padding: 4px 8px;
+  font-size: 14px;
+  line-height: 1;
+  background: transparent;
+  color: var(--text-muted);
+  border: 1px solid var(--border-main);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s;
+  white-space: nowrap;
+}
+
+.notif-bell-btn:hover,
+.notif-bell-btn:focus-visible {
+  color: var(--accent-primary);
+  border-color: var(--accent-primary);
+}
+
+.notif-bell-icon {
+  pointer-events: none;
+}
+
+.notif-bell-badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  min-width: 16px;
+  height: 16px;
+  padding: 0 4px;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 16px;
+  text-align: center;
+  color: var(--text-bright);
+  background: var(--accent-loss, #e04040);
+  border-radius: 8px;
+  pointer-events: none;
+}
+
+/* -- Dropdown panel ---------------------------------------------------------- */
+
+.notif-panel {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 900;
+  width: clamp(260px, 40vw, 360px);
+  max-height: 320px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin-top: 6px;
+  background: var(--bg-panel);
+  border: 1px solid var(--border-section);
+  border-radius: 8px;
+  box-shadow: var(--shadow-md);
+  font-size: 11px;
+}
+
+.notif-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 10px;
+  border-bottom: 1px solid var(--border-section);
+  color: var(--text-heading);
+  font-size: 12px;
+  position: sticky;
+  top: 0;
+  background: var(--bg-panel);
+  z-index: 1;
+}
+
+.notif-panel-clear {
+  padding: 2px 8px;
+  font-size: 10px;
+  cursor: pointer;
+  background: transparent;
+  color: var(--text-muted);
+  border: 1px solid var(--border-main);
+  border-radius: 4px;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.notif-panel-clear:hover {
+  color: var(--accent-loss, #e04040);
+  border-color: var(--accent-loss, #e04040);
+}
+
+.notif-panel-item {
+  display: flex;
+  gap: 8px;
+  padding: 6px 10px;
+  border-bottom: 1px solid color-mix(in srgb, var(--border-section) 40%, transparent);
+  align-items: baseline;
+}
+
+.notif-panel-item:last-child {
+  border-bottom: none;
+}
+
+.notif-panel-time {
+  flex-shrink: 0;
+  font-size: 10px;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.notif-panel-msg {
+  color: var(--text-main);
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
+.notif-panel-buy .notif-panel-msg {
+  color: var(--text-price);
+}
+
+.notif-panel-sell .notif-panel-msg {
+  color: var(--accent-gold, #d4a017);
+}
+
+.notif-panel-empty {
+  padding: 16px 10px;
+  text-align: center;
+  color: var(--text-muted);
+  font-style: italic;
+}

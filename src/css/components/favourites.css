@@ -1,0 +1,262 @@
+/* -- Favourites section -------------------------------------------------------------- */
+
+.favorites-section {
+  margin-bottom: 8px;
+  border: 1px solid var(--border-section);
+  border-radius: 6px;
+  background: var(--bg-main);
+  overflow: hidden;
+}
+
+.favorites-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 10px;
+  background: var(--bg-panel);
+  border-bottom: 1px solid var(--border-section);
+}
+
+.favorites-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+#favorites-sort-select {
+  font-size: 10px;
+  padding: 1px 4px;
+  background: var(--bg-input);
+  border: 1px solid var(--border-input);
+  color: var(--text-muted);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+
+.favorites-header h3 {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent-gold);
+}
+
+.favorites-header .view-btn {
+  font-size: 14px;
+  padding: 0 4px;
+}
+
+/* -- Clickable section headers -------------------------------------------------- */
+
+.section-header-clickable {
+  cursor: pointer;
+  user-select: none;
+}
+
+.section-header-clickable:hover {
+  background: var(--bg-input);
+}
+
+/* -- Allocation Suggestions section -------------------------------------------- */
+
+.allocation-section {
+  margin-bottom: 8px;
+  border: 1px solid var(--border-section);
+  border-radius: 6px;
+  background: var(--bg-main);
+  overflow: hidden;
+}
+
+.allocation-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 10px;
+  background: var(--bg-panel);
+  border-bottom: 1px solid var(--border-section);
+}
+
+.allocation-header h3 {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent-gold);
+}
+
+.allocation-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.allocation-header .view-btn {
+  font-size: 14px;
+  padding: 0 4px;
+}
+
+.allocation-disclaimer {
+  margin: 6px 10px 4px;
+  padding: 6px 8px;
+  font-size: 11px;
+  color: var(--text-muted);
+  background: var(--bg-input);
+  border-left: 3px solid var(--accent-gold);
+  border-radius: var(--radius-sm);
+  line-height: 1.4;
+}
+
+.allocation-input-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px 8px;
+  flex-wrap: wrap;
+}
+
+.allocation-input-row label {
+  font-size: 12px;
+  color: var(--text-main);
+  white-space: nowrap;
+}
+
+.allocation-input-row input {
+  flex: 1;
+  min-width: 100px;
+  max-width: 200px;
+  padding: 4px 8px;
+  font-size: 12px;
+  background: var(--bg-input);
+  border: 1px solid var(--border-input);
+  color: var(--text-main);
+  border-radius: 4px;
+}
+
+.allocation-input-row button {
+  padding: 4px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 4px;
+  border: 1px solid var(--accent-primary);
+  background: var(--accent-primary);
+  color: var(--bg-main);
+}
+
+.allocation-input-row button:hover {
+  opacity: 0.85;
+}
+
+.allocation-input-row select {
+  padding: 4px 6px;
+  font-size: 12px;
+  background: var(--bg-input);
+  border: 1px solid var(--border-input);
+  color: var(--text-main);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.allocation-results-table {
+  width: 100%;
+  table-layout: auto;
+  font-size: 11px;
+  border-collapse: collapse;
+  margin-top: 4px;
+}
+
+#allocation-results {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.allocation-results-table th,
+.allocation-results-table td {
+  padding: 4px 6px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-section);
+  white-space: nowrap;
+}
+
+.allocation-results-table tbody tr:nth-child(odd) {
+  background: color-mix(in srgb, var(--bg-panel) 60%, transparent);
+}
+
+.allocation-results-table th {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  background: var(--bg-panel);
+  position: sticky;
+  top: 0;
+}
+
+.allocation-results-table td {
+  color: var(--text-main);
+}
+
+.allocation-results-table .alloc-item-name {
+  font-weight: 600;
+  color: var(--text-bright);
+  width: 100%;
+  max-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.allocation-results-table .alloc-item-link {
+  cursor: pointer;
+  transition: color 0.15s;
+}
+
+.allocation-results-table .alloc-item-link:hover {
+  color: var(--accent-primary);
+  text-decoration: underline;
+}
+
+.allocation-results-table .alloc-gp {
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+  width: 1%;
+}
+
+.allocation-results-table .alloc-profit {
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+  color: var(--text-price);
+  font-weight: 600;
+  width: 1%;
+}
+
+.allocation-results-table .alloc-pct {
+  text-align: right;
+  color: var(--text-muted);
+  font-size: 10px;
+  width: 1%;
+}
+
+.allocation-summary-row td {
+  font-weight: 700;
+  border-top: 2px solid var(--border-section);
+  padding-top: 6px;
+}
+
+.allocation-empty {
+  padding: 8px 10px;
+  font-size: 11px;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.allocation-strategy-hint {
+  margin: 4px 10px 2px;
+  font-size: 10px;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.allocation-no-data {
+  color: var(--text-muted);
+  font-style: italic;
+}

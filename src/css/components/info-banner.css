@@ -1,0 +1,108 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+ *  Info Banner — non-blocking dismissible banner shown after startup
+ *  when price history data is unavailable.
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+.info-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px 16px;
+  margin: 8px 0;
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent-primary);
+  border-radius: 6px;
+  color: var(--text-main);
+  font-size: 13px;
+  line-height: 1.5;
+  animation: info-banner-in 0.3s ease-out;
+}
+
+.info-banner-icon {
+  font-size: 18px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.info-banner-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.info-banner-text {
+  margin: 0 0 10px;
+}
+
+.info-banner-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.info-banner-scan-btn {
+  padding: 6px 14px;
+  background: var(--accent-primary);
+  color: var(--surface);
+  border: none;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.info-banner-scan-btn:hover {
+  opacity: 0.9;
+}
+
+.info-banner-dismiss-btn {
+  padding: 6px 14px;
+  background: transparent;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-size: 12px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.info-banner-dismiss-btn:hover {
+  color: var(--text-main);
+  border-color: var(--text-muted);
+}
+
+.info-banner-hint {
+  margin-top: 8px;
+  font-size: 11px;
+  color: var(--text-muted);
+  opacity: 1;
+  transition: opacity 0.5s ease-out;
+}
+
+.info-banner-hint.fade-out {
+  opacity: 0;
+}
+
+@keyframes info-banner-in {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Responsive: stack buttons below text on narrow screens ─────────── */
+@media (max-width: 600px) {
+  .info-banner {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .info-banner-actions {
+    width: 100%;
+  }
+
+  .info-banner-scan-btn,
+  .info-banner-dismiss-btn {
+    flex: 1;
+    text-align: center;
+  }
+}

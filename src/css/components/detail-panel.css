@@ -1,0 +1,43 @@
+﻿/* ── Expandable detail panel ──────────────────────────────────────────────── */
+
+.market-card-detail {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease, padding 0.2s ease;
+  padding: 0 8px;
+  background: var(--bg-main);
+  border-top: none;
+}
+
+.market-card.expanded .market-card-detail {
+  max-height: 600px;
+  padding: 6px 8px;
+  border-top: 1px solid var(--border-main);
+  background: var(--detail-expanded-bg);
+  overflow-y: auto;
+}
+
+/* ── Detail group sections ────────────────────────────────────────────────── */
+
+.detail-group {
+  padding: 4px 0;
+}
+
+.detail-group + .detail-group {
+  border-top: 1px solid var(--border-main);
+}
+
+.detail-group-title {
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-accent, var(--text-muted));
+  padding: 4px 0 2px;
+  margin: 0;
+}
+
+.detail-group-predictive {
+  border-left: 3px solid var(--accent-primary);
+  padding-left: 8px;
+}

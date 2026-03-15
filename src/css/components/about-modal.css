@@ -1,0 +1,209 @@
+/* ── About / How It Works modal ──────────────────────────────────────────── */
+
+.about-btn {
+  margin-left: auto;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  background: transparent;
+  color: var(--text-muted);
+  border: 1px solid var(--border-main);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s;
+  white-space: nowrap;
+}
+.about-btn:hover,
+.about-btn:focus-visible {
+  color: var(--accent-primary);
+  border-color: var(--accent-primary);
+}
+
+/* ── Backdrop ──────────────────────────────────────────────────────────────── */
+
+.about-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 9000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: var(--modal-backdrop);
+}
+.about-modal-backdrop.visible {
+  display: flex;
+}
+
+/* ── Modal shell ───────────────────────────────────────────────────────────── */
+
+.about-modal {
+  position: relative;
+  width: min(720px, 92vw);
+  max-height: 85vh;
+  overflow-y: auto;
+  background: var(--bg-main);
+  color: var(--text-main);
+  border: 1px solid var(--border-main);
+  border-radius: 12px;
+  box-shadow: var(--shadow-lg);
+  padding: 0;
+}
+
+/* ── Header ────────────────────────────────────────────────────────────────── */
+
+.about-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px 12px;
+  border-bottom: 1px solid var(--border-main);
+}
+.about-modal-header h2 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-bright);
+}
+.about-modal-close {
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  color: var(--text-muted);
+  padding: 4px 8px;
+  border-radius: 4px;
+  line-height: 1;
+}
+.about-modal-close:hover,
+.about-modal-close:focus-visible {
+  color: var(--text-bright);
+  background: var(--bg-hover);
+}
+
+/* ── Body ──────────────────────────────────────────────────────────────────── */
+
+.about-modal-body {
+  padding: 16px 20px 24px;
+}
+
+.about-section {
+  margin-bottom: 20px;
+}
+.about-section:last-child {
+  margin-bottom: 0;
+}
+
+.about-section h3 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-bright);
+  margin: 0 0 8px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--border-main);
+}
+
+.about-section p {
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--text-main);
+  margin: 0 0 8px;
+}
+
+.about-section ul {
+  margin: 0 0 8px;
+  padding-left: 20px;
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--text-main);
+}
+.about-section li {
+  margin-bottom: 4px;
+}
+
+/* ── Highlight section (bottom line) ───────────────────────────────────────── */
+
+.about-section-highlight {
+  background: var(--bg-hover, rgba(255, 255, 255, 0.04));
+  border-left: 3px solid var(--accent-primary);
+  border-radius: 4px;
+  padding: 12px 16px;
+}
+
+/* ── Tables ────────────────────────────────────────────────────────────────── */
+
+.about-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+  margin-top: 8px;
+}
+.about-table th {
+  text-align: left;
+  font-weight: 700;
+  color: var(--text-bright);
+  padding: 6px 8px;
+  border-bottom: 2px solid var(--border-main);
+  white-space: nowrap;
+}
+.about-table td {
+  padding: 5px 8px;
+  border-bottom: 1px solid var(--border-main);
+  color: var(--text-main);
+  vertical-align: top;
+}
+.about-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* ── Data Confidence group in detail panels ────────────────────────────────── */
+
+.detail-group-confidence {
+  border-left: 3px solid var(--accent-secondary, var(--text-muted));
+  padding-left: 8px;
+}
+
+/* Confidence tier colours */
+.confidence-low {
+  color: var(--accent-loss, #ef4444);
+}
+.confidence-medium {
+  color: var(--accent-gold, #f59e0b);
+}
+.confidence-high {
+  color: var(--accent-profit, #22c55e);
+}
+
+/* ── Guide modal extras ────────────────────────────────────────────────────── */
+
+.guide-steps {
+  margin: 0 0 8px;
+  padding-left: 24px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text-main);
+  counter-reset: guide-step;
+}
+.guide-steps li {
+  margin-bottom: 8px;
+}
+
+.guide-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 1px 6px;
+  border-radius: 4px;
+  vertical-align: middle;
+}
+.guide-badge.velocity-insta {
+  background: var(--badge-velocity-insta-bg, rgba(34, 197, 94, 0.15));
+  color: var(--accent-profit, #22c55e);
+}
+.guide-badge.velocity-active {
+  background: var(--badge-velocity-active-bg, rgba(59, 130, 246, 0.15));
+  color: var(--accent-primary, #3b82f6);
+}
+.guide-badge.velocity-slow {
+  background: var(--badge-velocity-slow-bg, rgba(245, 158, 11, 0.15));
+  color: var(--accent-gold, #f59e0b);
+}

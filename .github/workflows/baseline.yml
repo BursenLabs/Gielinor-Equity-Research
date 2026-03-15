@@ -1,0 +1,38 @@
+name: Generate Baseline Data
+
+on:
+  schedule:
+    # Daily at 06:00 UTC (6 hours after RS3 daily reset)
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-baseline:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Generate baseline
+        run: node scripts/generate-baseline.mjs --out data/baseline.json
+
+      - name: Commit and push baseline
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/baseline.json
+          if git diff --cached --quiet; then
+            echo "No changes to baseline — skipping commit."
+          else
+            git commit -m "chore: update baseline data [skip ci]"
+            git push
+          fi

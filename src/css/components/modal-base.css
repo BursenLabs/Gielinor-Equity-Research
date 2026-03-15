@@ -1,0 +1,98 @@
+/* ── Shared modal base styles ─────────────────────────────────────────────────
+   Provides common backdrop, close-button, and header styling for all modals.
+   Individual modal files only need to specify size, layout, and unique rules.
+   ────────────────────────────────────────────────────────────────────────────── */
+
+/* ── Backdrop (fixed overlay) ─────────────────────────────────────────────── */
+
+.item-modal-backdrop,
+.graph-modal-backdrop,
+.analytics-modal-backdrop,
+.flip-detail-backdrop,
+.edit-flip-backdrop,
+.edit-completed-flip-backdrop,
+.setup-guide-backdrop,
+.guide-backdrop,
+.about-backdrop {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 500;
+  background: var(--modal-backdrop, rgba(0, 0, 0, 0.55));
+}
+
+/* Analytics and graph modals use fade-in transition instead of display toggle. */
+.analytics-modal-backdrop,
+.graph-modal-backdrop {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease;
+}
+.analytics-modal-backdrop {
+  z-index: 10000;
+  background: var(--modal-backdrop);
+}
+.analytics-modal-backdrop.visible,
+.graph-modal-backdrop.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Non-transition modals use display:none/flex toggle. */
+.item-modal-backdrop,
+.flip-detail-backdrop,
+.edit-flip-backdrop,
+.edit-completed-flip-backdrop,
+.setup-guide-backdrop,
+.guide-backdrop,
+.about-backdrop {
+  display: none;
+}
+.item-modal-backdrop.visible,
+.flip-detail-backdrop.visible,
+.edit-flip-backdrop.visible,
+.edit-completed-flip-backdrop.visible,
+.setup-guide-backdrop.visible,
+.guide-backdrop.visible,
+.about-backdrop.visible {
+  display: flex;
+}
+
+/* ── Close button (shared) ────────────────────────────────────────────────── */
+
+.item-modal-close,
+.analytics-modal-close,
+.about-modal-close {
+  all: unset;
+  cursor: pointer;
+  color: var(--text-muted);
+  font-size: 18px;
+  line-height: 1;
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
+  transition: color 0.15s, background 0.15s;
+}
+.item-modal-close:hover,
+.analytics-modal-close:hover,
+.about-modal-close:hover {
+  color: var(--accent-red);
+  background: var(--close-hover-bg);
+}
+
+/* Analytics close button is slightly larger. */
+.analytics-modal-close {
+  font-size: 20px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  margin-left: auto;
+}
+
+/* ── Modal entry animation ────────────────────────────────────────────────── */
+
+@keyframes modal-in {
+  from { opacity: 0; transform: scale(0.95) translateY(8px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
