@@ -17,7 +17,6 @@ Click [here](https://bursenlabs.github.io/Gielinor-Equity-Research/appconfig.jso
 
 Permissions: Grant the required permissions to finish the install.
 
-Note: While GER currently functions as a data-driven dashboard and does not yet utilize screen-capture or overlay features, these permissions are standard for the Alt1 environment to ensure the app loads correctly.
 ---
 
 ## Table of Contents
