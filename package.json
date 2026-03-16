@@ -4,6 +4,7 @@
   "author": "BursenLabs",
   "license": "ISC",
   "homepage": "https://BursenLabs.github.io/Gielinor-Equity-Research/",
+  "notes": "Originally derived from https://github.com/skillbert/alt1minimal/",
   "scripts": {
     "build": "webpack",
     "watch": "webpack --watch",
