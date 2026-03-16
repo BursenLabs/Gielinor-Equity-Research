@@ -7,7 +7,9 @@ Uses a **RAG (Retrieval-Augmented Generation) pipeline** to combine live GE mark
 ![TypeScript](https://img.shields.io/badge/TypeScript-ES2020-blue)
 ![Webpack](https://img.shields.io/badge/Webpack-5-blue)
 [![License](https://img.shields.io/badge/License-ISC-green)](LICENSE)
-
+## 🛠️ Built With
+* [Alt1 Toolkit](https://runeapps.org/alt1) - The platform for RS3 overlays.
+* [Alt1-Web-Dev-Template](https://github.com/Skillbert/alt1-web-dev-template) - The official template by Skillbert used as the foundation for this project.
 ---
 Alt1 Installation: You can add GER directly to your Alt1 Toolkit for the best experience while playing.
 
