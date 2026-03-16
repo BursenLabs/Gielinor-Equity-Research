@@ -9,6 +9,16 @@ Uses a **RAG (Retrieval-Augmented Generation) pipeline** to combine live GE mark
 [![License](https://img.shields.io/badge/License-ISC-green)](LICENSE)
 
 ---
+Alt1 Installation: You can add GER directly to your Alt1 Toolkit for the best experience while playing.
+
+Ensure Alt1 is running (RuneScape does not need to be active for the plugin to work).
+
+Click here to add the app: GER (or navigate to the URL in the Alt1 Browser and click "Add App").
+
+Permissions: Grant the required permissions to finish the install.
+
+Note: While GER currently functions as a data-driven dashboard and does not yet utilize screen-capture or overlay features, these permissions are standard for the Alt1 environment to ensure the app loads correctly.
+---
 
 ## Table of Contents
 
