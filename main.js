@@ -3326,7 +3326,6 @@ ___CSS_LOADER_EXPORT___.push([module.id, `/* ── Shared modal base styles ─
 .flip-detail-backdrop,
 .edit-flip-backdrop,
 .edit-completed-flip-backdrop,
-.setup-guide-backdrop,
 .guide-backdrop,
 .about-backdrop {
   position: fixed;
@@ -3335,6 +3334,17 @@ ___CSS_LOADER_EXPORT___.push([module.id, `/* ── Shared modal base styles ─
   align-items: center;
   justify-content: center;
   z-index: 500;
+  background: var(--modal-backdrop, rgba(0, 0, 0, 0.55));
+}
+
+/* Setup guide must sit above the settings backdrop (z-index: 600). */
+.setup-guide-backdrop {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 700;
   background: var(--modal-backdrop, rgba(0, 0, 0, 0.55));
 }
 
