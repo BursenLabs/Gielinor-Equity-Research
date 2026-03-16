@@ -13,7 +13,7 @@ Alt1 Installation: You can add GER directly to your Alt1 Toolkit for the best ex
 
 Ensure Alt1 is running (RuneScape does not need to be active for the plugin to work).
 
-Click here to add the app: GER (or navigate to the URL in the Alt1 Browser and click "Add App").
+Click [here](https://bursenlabs.github.io/Gielinor-Equity-Research/appconfig.json) to add the app: GER (or navigate to the URL in the Alt1 Browser and click "Add App").
 
 Permissions: Grant the required permissions to finish the install.
 
