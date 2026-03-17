@@ -7,9 +7,10 @@ import type { ActiveFlip } from "../../services";
 import { calculateGETax, formatGp } from "../../services";
 import { BUY_LIMIT_WINDOW_MS } from "../constants";
 import { formatCountdown } from "../formatters";
-import { buildSnapshot, findRankedItem } from "./snapshots";
+import { findRankedItem } from "./snapshots";
 import { createButton, openAnalyticsForName } from "../helpers";
 import { showEditFlipModal } from "../modals/editFlipModal";
+import { showCompleteFlipModal, showAlchFlipModal } from "../modals/completeFlipModal";
 import { getPortfolio } from "../state";
 
 /** Compute cost, revenue, profit, and ROI for an active flip. */
@@ -29,10 +30,9 @@ export function calcFlipMetrics(flip: ActiveFlip): { cost: number; revenue: numb
 export function buildFlipCard(
   flip: ActiveFlip,
   renderFlips: () => void,
-  renderCompletedFlips: () => void,
 ): HTMLElement {
   const card = buildFlipCardDOM(flip);
-  wireFlipCardEvents(card, flip, renderFlips, renderCompletedFlips);
+  wireFlipCardEvents(card, flip, renderFlips);
   return card;
 }
 
@@ -104,7 +104,6 @@ function wireFlipCardEvents(
   card: HTMLElement,
   flip: ActiveFlip,
   renderFlips: () => void,
-  renderCompletedFlips: () => void,
 ): void {
   const portfolio = getPortfolio();
 
@@ -117,46 +116,11 @@ function wireFlipCardEvents(
   });
 
   card.querySelector(".flip-complete-btn")?.addEventListener("click", () => {
-    const input = prompt(
-      `Enter the actual sell price per item for "${flip.itemName}":`,
-      String(flip.targetSellPrice),
-    );
-    if (input === null) return;
-    const price = Number(input);
-    if (!price || price <= 0) return;
-    const ranked = findRankedItem(flip.itemName);
-    const sellSnap = ranked ? buildSnapshot(ranked) : undefined;
-    portfolio.completeFlip(flip.id, price, sellSnap);
-    renderFlips();
-    renderCompletedFlips();
+    showCompleteFlipModal(flip);
   });
 
   card.querySelector(".flip-alch-btn")?.addEventListener("click", () => {
-    const ranked = findRankedItem(flip.itemName);
-    const alchVal = ranked?.highAlch;
-    let alchPrice: number;
-    if (typeof alchVal === "number" && alchVal > 0) {
-      const totalProfit = (alchVal * flip.quantity) - (flip.buyPrice * flip.quantity);
-      const pfx = totalProfit >= 0 ? "profit" : "loss";
-      if (!confirm(
-        `High Alch ${flip.itemName} at ${alchVal.toLocaleString("en-US")} gp each?\n\n` +
-        `Qty: ${flip.quantity.toLocaleString("en-US")}\n` +
-        `Total ${pfx}: ${totalProfit >= 0 ? "+" : ""}${totalProfit.toLocaleString("en-US")} gp (no GE tax)`
-      )) return;
-      alchPrice = alchVal;
-    } else {
-      const input = prompt(
-        `High Alch value unknown for "${flip.itemName}".\nEnter the High Alch value per item:`,
-      );
-      if (input === null) return;
-      const parsed = Number(input);
-      if (!parsed || parsed <= 0) return;
-      alchPrice = parsed;
-    }
-    const sellSnap = ranked ? buildSnapshot(ranked) : undefined;
-    portfolio.completeFlip(flip.id, alchPrice, sellSnap, true);
-    renderFlips();
-    renderCompletedFlips();
+    showAlchFlipModal(flip);
   });
 
   card.querySelector(".flip-edit-btn")?.addEventListener("click", () => showEditFlipModal(flip));
