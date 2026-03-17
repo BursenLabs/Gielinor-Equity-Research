@@ -4586,6 +4586,31 @@ ___CSS_LOADER_EXPORT___.push([module.id, `/* -- Portfolio view -----------------
   color: var(--text-bright);
   border-color: var(--accent-primary);
 }
+
+/* -- Complete Flip modal preview ------------------------------------------ */
+
+.complete-flip-preview {
+  padding: 8px 10px;
+  margin-top: 4px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: 4px;
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--text-soft);
+  min-height: 24px;
+}
+
+.complete-flip-preview-label {
+  font-weight: 600;
+  color: var(--text-muted);
+  font-size: 11px;
+}
+
+.complete-flip-preview-tax {
+  color: var(--text-dimmed);
+  font-size: 11px;
+}
 `, ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
@@ -17535,28 +17560,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _market_marketPanel__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./market/marketPanel */ "./ui/market/marketPanel.ts");
 /* harmony import */ var _market_marketSearch__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./market/marketSearch */ "./ui/market/marketSearch.ts");
 /* harmony import */ var _modals_analyticsModal__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./modals/analyticsModal */ "./ui/modals/analyticsModal.ts");
-/* harmony import */ var _modals_editFlipModal__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./modals/editFlipModal */ "./ui/modals/editFlipModal.ts");
-/* harmony import */ var _modals_editCompletedFlipModal__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./modals/editCompletedFlipModal */ "./ui/modals/editCompletedFlipModal.ts");
-/* harmony import */ var _modals_modalHooks__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./modals/modalHooks */ "./ui/modals/modalHooks.ts");
-/* harmony import */ var _notifications_errorBanner__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./notifications/errorBanner */ "./ui/notifications/errorBanner.ts");
-/* harmony import */ var _notifications_notifBell__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./notifications/notifBell */ "./ui/notifications/notifBell.ts");
-/* harmony import */ var _notifications_priceAlerts__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./notifications/priceAlerts */ "./ui/notifications/priceAlerts.ts");
-/* harmony import */ var _notifications_infoBanner__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./notifications/infoBanner */ "./ui/notifications/infoBanner.ts");
-/* harmony import */ var _backToTop__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./backToTop */ "./ui/backToTop.ts");
-/* harmony import */ var _portfolio_autocomplete__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./portfolio/autocomplete */ "./ui/portfolio/autocomplete.ts");
-/* harmony import */ var _portfolio_completedFlips__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./portfolio/completedFlips */ "./ui/portfolio/completedFlips.ts");
-/* harmony import */ var _portfolio_portfolio__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./portfolio/portfolio */ "./ui/portfolio/portfolio.ts");
-/* harmony import */ var _portfolio_portfolioDashboard__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./portfolio/portfolioDashboard */ "./ui/portfolio/portfolioDashboard.ts");
-/* harmony import */ var _scanProgress__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./scanProgress */ "./ui/scanProgress.ts");
-/* harmony import */ var _settings__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./settings */ "./ui/settings.ts");
-/* harmony import */ var _pipelineReload__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./pipelineReload */ "./ui/pipelineReload.ts");
-/* harmony import */ var _modals_setupGuideModal__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./modals/setupGuideModal */ "./ui/modals/setupGuideModal.ts");
-/* harmony import */ var _modals_aboutModal__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./modals/aboutModal */ "./ui/modals/aboutModal.ts");
-/* harmony import */ var _modals_guideModal__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./modals/guideModal */ "./ui/modals/guideModal.ts");
-/* harmony import */ var _state__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./state */ "./ui/state.ts");
-/* harmony import */ var _layoutManager__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./layoutManager */ "./ui/layoutManager.ts");
-/* harmony import */ var _theme_theme__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./theme/theme */ "./ui/theme/theme.ts");
-/* harmony import */ var _tabManager__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./tabManager */ "./ui/tabManager.ts");
+/* harmony import */ var _modals_completeFlipModal__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./modals/completeFlipModal */ "./ui/modals/completeFlipModal.ts");
+/* harmony import */ var _modals_editFlipModal__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./modals/editFlipModal */ "./ui/modals/editFlipModal.ts");
+/* harmony import */ var _modals_editCompletedFlipModal__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./modals/editCompletedFlipModal */ "./ui/modals/editCompletedFlipModal.ts");
+/* harmony import */ var _modals_modalHooks__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./modals/modalHooks */ "./ui/modals/modalHooks.ts");
+/* harmony import */ var _notifications_errorBanner__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./notifications/errorBanner */ "./ui/notifications/errorBanner.ts");
+/* harmony import */ var _notifications_notifBell__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./notifications/notifBell */ "./ui/notifications/notifBell.ts");
+/* harmony import */ var _notifications_priceAlerts__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./notifications/priceAlerts */ "./ui/notifications/priceAlerts.ts");
+/* harmony import */ var _notifications_infoBanner__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./notifications/infoBanner */ "./ui/notifications/infoBanner.ts");
+/* harmony import */ var _backToTop__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./backToTop */ "./ui/backToTop.ts");
+/* harmony import */ var _portfolio_autocomplete__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./portfolio/autocomplete */ "./ui/portfolio/autocomplete.ts");
+/* harmony import */ var _portfolio_completedFlips__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./portfolio/completedFlips */ "./ui/portfolio/completedFlips.ts");
+/* harmony import */ var _portfolio_portfolio__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./portfolio/portfolio */ "./ui/portfolio/portfolio.ts");
+/* harmony import */ var _portfolio_portfolioDashboard__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./portfolio/portfolioDashboard */ "./ui/portfolio/portfolioDashboard.ts");
+/* harmony import */ var _scanProgress__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./scanProgress */ "./ui/scanProgress.ts");
+/* harmony import */ var _settings__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./settings */ "./ui/settings.ts");
+/* harmony import */ var _pipelineReload__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./pipelineReload */ "./ui/pipelineReload.ts");
+/* harmony import */ var _modals_setupGuideModal__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./modals/setupGuideModal */ "./ui/modals/setupGuideModal.ts");
+/* harmony import */ var _modals_aboutModal__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./modals/aboutModal */ "./ui/modals/aboutModal.ts");
+/* harmony import */ var _modals_guideModal__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./modals/guideModal */ "./ui/modals/guideModal.ts");
+/* harmony import */ var _state__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./state */ "./ui/state.ts");
+/* harmony import */ var _layoutManager__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./layoutManager */ "./ui/layoutManager.ts");
+/* harmony import */ var _theme_theme__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./theme/theme */ "./ui/theme/theme.ts");
+/* harmony import */ var _tabManager__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./tabManager */ "./ui/tabManager.ts");
 /**
  * @module ui/initUI
  * Boot orchestrator – resolves DOM refs, wires cross-module hooks,
@@ -17566,6 +17592,7 @@ __webpack_require__.r(__webpack_exports__);
  */
 
 // ─── UI modules (alphabetical) ─────────────────────────────────────────────
+
 
 
 
@@ -17616,43 +17643,44 @@ async function initUI() {
 function wireHooks() {
     (0,_favouritesData__WEBPACK_IMPORTED_MODULE_7__.setRenderFavoritesHook)(_favourites__WEBPACK_IMPORTED_MODULE_6__.renderFavorites);
     (0,_helpers__WEBPACK_IMPORTED_MODULE_8__.setShowAnalyticsModalHook)(_modals_analyticsModal__WEBPACK_IMPORTED_MODULE_11__.showAnalyticsModal);
-    (0,_helpers__WEBPACK_IMPORTED_MODULE_8__.setSwitchTabHook)(_tabManager__WEBPACK_IMPORTED_MODULE_33__.switchTab);
-    (0,_helpers__WEBPACK_IMPORTED_MODULE_8__.setCloseItemSuggestionsHook)(_portfolio_autocomplete__WEBPACK_IMPORTED_MODULE_20__.closeItemSuggestions);
-    (0,_notifications_errorBanner__WEBPACK_IMPORTED_MODULE_15__.setRefreshMarketPanelHook)(_market_marketPanel__WEBPACK_IMPORTED_MODULE_9__.refreshMarketPanel);
-    (0,_scanProgress__WEBPACK_IMPORTED_MODULE_24__.setScanRefreshHook)(_market_marketPanel__WEBPACK_IMPORTED_MODULE_9__.refreshMarketPanel);
-    (0,_pipelineReload__WEBPACK_IMPORTED_MODULE_26__.setReloadRefreshHook)(_market_marketPanel__WEBPACK_IMPORTED_MODULE_9__.refreshMarketPanel);
-    (0,_settings__WEBPACK_IMPORTED_MODULE_25__.setShowSetupGuideHook)(_modals_setupGuideModal__WEBPACK_IMPORTED_MODULE_27__.showSetupGuide);
-    (0,_settings__WEBPACK_IMPORTED_MODULE_25__.setShowAboutModalHook)(_modals_aboutModal__WEBPACK_IMPORTED_MODULE_28__.showAboutModal);
-    (0,_settings__WEBPACK_IMPORTED_MODULE_25__.setShowGuideModalHook)(_modals_guideModal__WEBPACK_IMPORTED_MODULE_29__.showGuideModal);
-    (0,_modals_editFlipModal__WEBPACK_IMPORTED_MODULE_12__.setRenderFlipsHook)(_portfolio_portfolio__WEBPACK_IMPORTED_MODULE_22__.renderFlips);
-    (0,_modals_editCompletedFlipModal__WEBPACK_IMPORTED_MODULE_13__.setRenderCompletedFlipsHook)(_portfolio_completedFlips__WEBPACK_IMPORTED_MODULE_21__.renderCompletedFlips);
-    (0,_modals_modalHooks__WEBPACK_IMPORTED_MODULE_14__.setRenderMarketItemsHook)(_market_marketPanel__WEBPACK_IMPORTED_MODULE_9__.renderMarketItems);
-    (0,_layoutManager__WEBPACK_IMPORTED_MODULE_31__.setRenderFavoritesForViewToggle)(_favourites__WEBPACK_IMPORTED_MODULE_6__.renderFavorites);
-    (0,_portfolio_portfolio__WEBPACK_IMPORTED_MODULE_22__.setRenderPortfolioDashboardHook)(_portfolio_portfolioDashboard__WEBPACK_IMPORTED_MODULE_23__.renderPortfolioDashboard);
+    (0,_helpers__WEBPACK_IMPORTED_MODULE_8__.setSwitchTabHook)(_tabManager__WEBPACK_IMPORTED_MODULE_34__.switchTab);
+    (0,_helpers__WEBPACK_IMPORTED_MODULE_8__.setCloseItemSuggestionsHook)(_portfolio_autocomplete__WEBPACK_IMPORTED_MODULE_21__.closeItemSuggestions);
+    (0,_notifications_errorBanner__WEBPACK_IMPORTED_MODULE_16__.setRefreshMarketPanelHook)(_market_marketPanel__WEBPACK_IMPORTED_MODULE_9__.refreshMarketPanel);
+    (0,_scanProgress__WEBPACK_IMPORTED_MODULE_25__.setScanRefreshHook)(_market_marketPanel__WEBPACK_IMPORTED_MODULE_9__.refreshMarketPanel);
+    (0,_pipelineReload__WEBPACK_IMPORTED_MODULE_27__.setReloadRefreshHook)(_market_marketPanel__WEBPACK_IMPORTED_MODULE_9__.refreshMarketPanel);
+    (0,_settings__WEBPACK_IMPORTED_MODULE_26__.setShowSetupGuideHook)(_modals_setupGuideModal__WEBPACK_IMPORTED_MODULE_28__.showSetupGuide);
+    (0,_settings__WEBPACK_IMPORTED_MODULE_26__.setShowAboutModalHook)(_modals_aboutModal__WEBPACK_IMPORTED_MODULE_29__.showAboutModal);
+    (0,_settings__WEBPACK_IMPORTED_MODULE_26__.setShowGuideModalHook)(_modals_guideModal__WEBPACK_IMPORTED_MODULE_30__.showGuideModal);
+    (0,_modals_editFlipModal__WEBPACK_IMPORTED_MODULE_13__.setRenderFlipsHook)(_portfolio_portfolio__WEBPACK_IMPORTED_MODULE_23__.renderFlips);
+    (0,_modals_editCompletedFlipModal__WEBPACK_IMPORTED_MODULE_14__.setRenderCompletedFlipsHook)(_portfolio_completedFlips__WEBPACK_IMPORTED_MODULE_22__.renderCompletedFlips);
+    (0,_modals_completeFlipModal__WEBPACK_IMPORTED_MODULE_12__.setCompleteFlipRenderHooks)(_portfolio_portfolio__WEBPACK_IMPORTED_MODULE_23__.renderFlips, _portfolio_completedFlips__WEBPACK_IMPORTED_MODULE_22__.renderCompletedFlips);
+    (0,_modals_modalHooks__WEBPACK_IMPORTED_MODULE_15__.setRenderMarketItemsHook)(_market_marketPanel__WEBPACK_IMPORTED_MODULE_9__.renderMarketItems);
+    (0,_layoutManager__WEBPACK_IMPORTED_MODULE_32__.setRenderFavoritesForViewToggle)(_favourites__WEBPACK_IMPORTED_MODULE_6__.renderFavorites);
+    (0,_portfolio_portfolio__WEBPACK_IMPORTED_MODULE_23__.setRenderPortfolioDashboardHook)(_portfolio_portfolioDashboard__WEBPACK_IMPORTED_MODULE_24__.renderPortfolioDashboard);
 }
 /** Phase 1 — Resolve DOM refs and bind all event listeners. */
 function bindAllListeners() {
     (0,_domRefs__WEBPACK_IMPORTED_MODULE_5__.resolveElements)();
     (0,_disclaimer__WEBPACK_IMPORTED_MODULE_4__.bindDisclaimer)();
-    (0,_settings__WEBPACK_IMPORTED_MODULE_25__.populateProviderDropdown)();
-    (0,_settings__WEBPACK_IMPORTED_MODULE_25__.restoreSettings)();
-    (0,_settings__WEBPACK_IMPORTED_MODULE_25__.bindSettingsEvents)();
+    (0,_settings__WEBPACK_IMPORTED_MODULE_26__.populateProviderDropdown)();
+    (0,_settings__WEBPACK_IMPORTED_MODULE_26__.restoreSettings)();
+    (0,_settings__WEBPACK_IMPORTED_MODULE_26__.bindSettingsEvents)();
     (0,_chat__WEBPACK_IMPORTED_MODULE_2__.bindChatEvents)();
-    (0,_layoutManager__WEBPACK_IMPORTED_MODULE_31__.bindViewToggle)();
+    (0,_layoutManager__WEBPACK_IMPORTED_MODULE_32__.bindViewToggle)();
     (0,_market_marketPanel__WEBPACK_IMPORTED_MODULE_9__.bindMarketFilters)();
     (0,_market_marketSearch__WEBPACK_IMPORTED_MODULE_10__.bindSearchFilters)();
-    (0,_pipelineReload__WEBPACK_IMPORTED_MODULE_26__.bindForceReload)();
-    (0,_layoutManager__WEBPACK_IMPORTED_MODULE_31__.bindLayoutToggle)();
-    (0,_theme_theme__WEBPACK_IMPORTED_MODULE_32__.bindTheme)();
-    (0,_tabManager__WEBPACK_IMPORTED_MODULE_33__.bindTabNavigation)();
+    (0,_pipelineReload__WEBPACK_IMPORTED_MODULE_27__.bindForceReload)();
+    (0,_layoutManager__WEBPACK_IMPORTED_MODULE_32__.bindLayoutToggle)();
+    (0,_theme_theme__WEBPACK_IMPORTED_MODULE_33__.bindTheme)();
+    (0,_tabManager__WEBPACK_IMPORTED_MODULE_34__.bindTabNavigation)();
     (0,_chat__WEBPACK_IMPORTED_MODULE_2__.bindClearChat)();
-    (0,_portfolio_portfolio__WEBPACK_IMPORTED_MODULE_22__.bindPortfolio)();
-    (0,_notifications_errorBanner__WEBPACK_IMPORTED_MODULE_15__.bindErrorRetry)();
+    (0,_portfolio_portfolio__WEBPACK_IMPORTED_MODULE_23__.bindPortfolio)();
+    (0,_notifications_errorBanner__WEBPACK_IMPORTED_MODULE_16__.bindErrorRetry)();
     (0,_dataManagement__WEBPACK_IMPORTED_MODULE_3__.bindDataManagement)();
     (0,_dataManagement__WEBPACK_IMPORTED_MODULE_3__.bindCacheManagement)();
-    (0,_scanProgress__WEBPACK_IMPORTED_MODULE_24__.bindFullMarketScan)();
-    (0,_backToTop__WEBPACK_IMPORTED_MODULE_19__.bindBackToTop)();
-    (0,_notifications_priceAlerts__WEBPACK_IMPORTED_MODULE_17__.requestNotificationPermission)();
+    (0,_scanProgress__WEBPACK_IMPORTED_MODULE_25__.bindFullMarketScan)();
+    (0,_backToTop__WEBPACK_IMPORTED_MODULE_20__.bindBackToTop)();
+    (0,_notifications_priceAlerts__WEBPACK_IMPORTED_MODULE_18__.requestNotificationPermission)();
 }
 /** Phase 2 — Create shared service singletons and store in UI state. */
 async function initServices() {
@@ -17661,16 +17689,16 @@ async function initServices() {
     const analyzer = new _services__WEBPACK_IMPORTED_MODULE_0__.MarketAnalyzerService(cache);
     const wiki = new _services__WEBPACK_IMPORTED_MODULE_0__.WikiService();
     const portfolio = new _services__WEBPACK_IMPORTED_MODULE_0__.PortfolioService();
-    (0,_state__WEBPACK_IMPORTED_MODULE_30__.setCache)(cache);
-    (0,_state__WEBPACK_IMPORTED_MODULE_30__.setAnalyzer)(analyzer);
-    (0,_state__WEBPACK_IMPORTED_MODULE_30__.setWiki)(wiki);
-    (0,_state__WEBPACK_IMPORTED_MODULE_30__.setPortfolio)(portfolio);
+    (0,_state__WEBPACK_IMPORTED_MODULE_31__.setCache)(cache);
+    (0,_state__WEBPACK_IMPORTED_MODULE_31__.setAnalyzer)(analyzer);
+    (0,_state__WEBPACK_IMPORTED_MODULE_31__.setWiki)(wiki);
+    (0,_state__WEBPACK_IMPORTED_MODULE_31__.setPortfolio)(portfolio);
     const newsService = new _services__WEBPACK_IMPORTED_MODULE_0__.NewsService();
-    (0,_state__WEBPACK_IMPORTED_MODULE_30__.setNewsService)(newsService);
+    (0,_state__WEBPACK_IMPORTED_MODULE_31__.setNewsService)(newsService);
     newsService
         .getRecentNews()
         .then((items) => {
-        (0,_state__WEBPACK_IMPORTED_MODULE_30__.setLatestNewsContext)(newsService.formatForLLM(items));
+        (0,_state__WEBPACK_IMPORTED_MODULE_31__.setLatestNewsContext)(newsService.formatForLLM(items));
     })
         .catch((err) => console.warn("[UIService] News fetch failed:", err));
 }
@@ -17682,7 +17710,7 @@ async function loadInitialData() {
     catch (err) {
         console.error("[UIService] Startup: market panel failed:", err);
         const msg = err instanceof Error ? err.message : "Could not load market data.";
-        (0,_notifications_errorBanner__WEBPACK_IMPORTED_MODULE_15__.showError)(msg);
+        (0,_notifications_errorBanner__WEBPACK_IMPORTED_MODULE_16__.showError)(msg);
     }
     (0,_favourites__WEBPACK_IMPORTED_MODULE_6__.restoreFavSort)();
     (0,_favourites__WEBPACK_IMPORTED_MODULE_6__.bindFavSort)();
@@ -17694,27 +17722,27 @@ async function loadInitialData() {
 }
 /** Phase 5+6 — Catalogue, chat history, portfolio, dashboard, info banner. */
 async function initFavoritesAndPortfolio() {
-    await (0,_portfolio_portfolio__WEBPACK_IMPORTED_MODULE_22__.loadItemCatalogue)();
+    await (0,_portfolio_portfolio__WEBPACK_IMPORTED_MODULE_23__.loadItemCatalogue)();
     try {
         const geCat = await (0,_services__WEBPACK_IMPORTED_MODULE_0__.fetchGECatalogue)();
-        (0,_state__WEBPACK_IMPORTED_MODULE_30__.setGeCatalogue)(geCat);
+        (0,_state__WEBPACK_IMPORTED_MODULE_31__.setGeCatalogue)(geCat);
     }
     catch (err) {
         console.warn("[UIService] GE catalogue fetch failed:", err);
-        (0,_state__WEBPACK_IMPORTED_MODULE_30__.setGeCatalogue)([]);
+        (0,_state__WEBPACK_IMPORTED_MODULE_31__.setGeCatalogue)([]);
     }
     (0,_chat__WEBPACK_IMPORTED_MODULE_2__.restoreChatHistory)();
-    (0,_portfolio_portfolio__WEBPACK_IMPORTED_MODULE_22__.renderFlips)();
-    (0,_portfolio_completedFlips__WEBPACK_IMPORTED_MODULE_21__.renderCompletedFlips)();
-    (0,_portfolio_portfolio__WEBPACK_IMPORTED_MODULE_22__.startPortfolioTimer)();
-    (0,_notifications_priceAlerts__WEBPACK_IMPORTED_MODULE_17__.checkBuyLimitResets)();
-    (0,_portfolio_portfolio__WEBPACK_IMPORTED_MODULE_22__.bindPortfolioSubNav)();
-    (0,_portfolio_portfolioDashboard__WEBPACK_IMPORTED_MODULE_23__.bindDashboardCollapse)();
-    (0,_portfolio_completedFlips__WEBPACK_IMPORTED_MODULE_21__.bindCompletedFlipsFilter)();
-    (0,_portfolio_completedFlips__WEBPACK_IMPORTED_MODULE_21__.bindCsvExport)();
-    (0,_notifications_notifBell__WEBPACK_IMPORTED_MODULE_16__.bindNotifBell)();
-    const cache = (0,_state__WEBPACK_IMPORTED_MODULE_30__.getCache)();
-    (0,_notifications_infoBanner__WEBPACK_IMPORTED_MODULE_18__.maybeShowInfoBanner)(cache).catch((err) => console.warn("[UIService] Info banner check failed:", err));
+    (0,_portfolio_portfolio__WEBPACK_IMPORTED_MODULE_23__.renderFlips)();
+    (0,_portfolio_completedFlips__WEBPACK_IMPORTED_MODULE_22__.renderCompletedFlips)();
+    (0,_portfolio_portfolio__WEBPACK_IMPORTED_MODULE_23__.startPortfolioTimer)();
+    (0,_notifications_priceAlerts__WEBPACK_IMPORTED_MODULE_18__.checkBuyLimitResets)();
+    (0,_portfolio_portfolio__WEBPACK_IMPORTED_MODULE_23__.bindPortfolioSubNav)();
+    (0,_portfolio_portfolioDashboard__WEBPACK_IMPORTED_MODULE_24__.bindDashboardCollapse)();
+    (0,_portfolio_completedFlips__WEBPACK_IMPORTED_MODULE_22__.bindCompletedFlipsFilter)();
+    (0,_portfolio_completedFlips__WEBPACK_IMPORTED_MODULE_22__.bindCsvExport)();
+    (0,_notifications_notifBell__WEBPACK_IMPORTED_MODULE_17__.bindNotifBell)();
+    const cache = (0,_state__WEBPACK_IMPORTED_MODULE_31__.getCache)();
+    (0,_notifications_infoBanner__WEBPACK_IMPORTED_MODULE_19__.maybeShowInfoBanner)(cache).catch((err) => console.warn("[UIService] Info banner check failed:", err));
 }
 
 
@@ -19097,6 +19125,221 @@ function bindAnalyticsRefreshBtn(graphSection, item) {
             btn.disabled = false;
         }
     });
+}
+
+
+/***/ },
+
+/***/ "./ui/modals/completeFlipModal.ts"
+/*!****************************************!*\
+  !*** ./ui/modals/completeFlipModal.ts ***!
+  \****************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   setCompleteFlipRenderHooks: () => (/* binding */ setCompleteFlipRenderHooks),
+/* harmony export */   showAlchFlipModal: () => (/* binding */ showAlchFlipModal),
+/* harmony export */   showCompleteFlipModal: () => (/* binding */ showCompleteFlipModal)
+/* harmony export */ });
+/* harmony import */ var _services__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../services */ "./services/index.ts");
+/* harmony import */ var _state__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../state */ "./ui/state.ts");
+/* harmony import */ var _portfolio_snapshots__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../portfolio/snapshots */ "./ui/portfolio/snapshots.ts");
+/* harmony import */ var _modalBase__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modalBase */ "./ui/modals/modalBase.ts");
+/**
+ * @module ui/modals/completeFlipModal
+ * Modal for completing (selling) or alching an active flip.
+ * Replaces browser prompt()/confirm() which are blocked in the Alt1 overlay.
+ */
+
+
+
+
+// ─── Singleton shells ───────────────────────────────────────────────────────
+const ensureCompleteModal = (0,_modalBase__WEBPACK_IMPORTED_MODULE_3__.singletonModal)({
+    backdropClass: "flip-detail-backdrop",
+    modalClass: "flip-detail-modal complete-flip-modal",
+    ariaLabel: "Complete flip",
+});
+const ensureAlchModal = (0,_modalBase__WEBPACK_IMPORTED_MODULE_3__.singletonModal)({
+    backdropClass: "flip-detail-backdrop",
+    modalClass: "flip-detail-modal complete-flip-modal",
+    ariaLabel: "High Alch flip",
+});
+// ─── Forward refs (wired from initUI) ───────────────────────────────────────
+let _renderFlips = () => { };
+let _renderCompletedFlips = () => { };
+/** Set renderFlips hook — called from initUI. */
+function setCompleteFlipRenderHooks(renderFlips, renderCompleted) {
+    _renderFlips = renderFlips;
+    _renderCompletedFlips = renderCompleted;
+}
+// ─── Sell completion modal ──────────────────────────────────────────────────
+/** Show the modal to enter a sell price and complete a flip. */
+function showCompleteFlipModal(flip) {
+    const portfolio = (0,_state__WEBPACK_IMPORTED_MODULE_1__.getPortfolio)();
+    const { backdrop, content } = ensureCompleteModal();
+    content.innerHTML = "";
+    const hide = () => backdrop.classList.remove("visible");
+    const header = (0,_modalBase__WEBPACK_IMPORTED_MODULE_3__.buildModalHeader)(`Complete: ${flip.itemName}`, hide);
+    const form = document.createElement("form");
+    form.className = "flip-edit-form";
+    form.addEventListener("submit", (e) => e.preventDefault());
+    // Sell price field
+    const field = document.createElement("div");
+    field.className = "flip-edit-field";
+    const label = document.createElement("label");
+    label.setAttribute("for", "complete-sell-price");
+    label.textContent = "Actual Sell Price (per item)";
+    const input = document.createElement("input");
+    input.type = "number";
+    input.id = "complete-sell-price";
+    input.min = "1";
+    input.value = String(flip.targetSellPrice);
+    field.appendChild(label);
+    field.appendChild(input);
+    form.appendChild(field);
+    // Live profit preview
+    const preview = document.createElement("div");
+    preview.className = "complete-flip-preview";
+    const updatePreview = () => {
+        const sellPrice = Number(input.value);
+        if (!sellPrice || sellPrice <= 0) {
+            preview.innerHTML = "";
+            return;
+        }
+        const tax = (0,_services__WEBPACK_IMPORTED_MODULE_0__.calculateGETax)(sellPrice);
+        const revenue = (sellPrice - tax) * flip.quantity;
+        const cost = flip.buyPrice * flip.quantity;
+        const profit = revenue - cost;
+        const cls = profit >= 0 ? "win" : "loss";
+        preview.innerHTML =
+            `<span class="complete-flip-preview-label">Est. Profit:</span> ` +
+                `<span class="flip-detail-value ${cls}">${profit >= 0 ? "+" : ""}${(0,_services__WEBPACK_IMPORTED_MODULE_0__.formatGp)(Math.round(profit))} gp</span>` +
+                `<br><span class="complete-flip-preview-label">GE Tax:</span> ` +
+                `<span class="complete-flip-preview-tax">${(0,_services__WEBPACK_IMPORTED_MODULE_0__.formatGp)(tax)} gp/ea</span>`;
+    };
+    input.addEventListener("input", updatePreview);
+    updatePreview();
+    form.appendChild(preview);
+    // Buttons
+    const btnRow = document.createElement("div");
+    btnRow.className = "flip-edit-actions";
+    const confirmBtn = document.createElement("button");
+    confirmBtn.type = "button";
+    confirmBtn.className = "flip-edit-save";
+    confirmBtn.textContent = "Complete Flip";
+    confirmBtn.addEventListener("click", () => {
+        const price = Number(input.value);
+        if (!price || price <= 0)
+            return;
+        const ranked = (0,_portfolio_snapshots__WEBPACK_IMPORTED_MODULE_2__.findRankedItem)(flip.itemName);
+        const sellSnap = ranked ? (0,_portfolio_snapshots__WEBPACK_IMPORTED_MODULE_2__.buildSnapshot)(ranked) : undefined;
+        portfolio.completeFlip(flip.id, price, sellSnap);
+        hide();
+        _renderFlips();
+        _renderCompletedFlips();
+    });
+    const cancelBtn = document.createElement("button");
+    cancelBtn.type = "button";
+    cancelBtn.className = "flip-edit-cancel";
+    cancelBtn.textContent = "Cancel";
+    cancelBtn.addEventListener("click", hide);
+    btnRow.appendChild(confirmBtn);
+    btnRow.appendChild(cancelBtn);
+    content.appendChild(header);
+    content.appendChild(form);
+    content.appendChild(btnRow);
+    backdrop.classList.add("visible");
+    // Auto-focus the input after the modal is visible
+    input.focus();
+    input.select();
+}
+// ─── Alch exit modal ────────────────────────────────────────────────────────
+/** Show the modal to confirm or enter an alch price and complete via High Alchemy. */
+function showAlchFlipModal(flip) {
+    const portfolio = (0,_state__WEBPACK_IMPORTED_MODULE_1__.getPortfolio)();
+    const ranked = (0,_portfolio_snapshots__WEBPACK_IMPORTED_MODULE_2__.findRankedItem)(flip.itemName);
+    const alchVal = (typeof ranked?.highAlch === "number" && ranked.highAlch > 0)
+        ? ranked.highAlch
+        : null;
+    const { backdrop, content } = ensureAlchModal();
+    content.innerHTML = "";
+    const hide = () => backdrop.classList.remove("visible");
+    const header = (0,_modalBase__WEBPACK_IMPORTED_MODULE_3__.buildModalHeader)(`High Alch: ${flip.itemName}`, hide);
+    const form = document.createElement("form");
+    form.className = "flip-edit-form";
+    form.addEventListener("submit", (e) => e.preventDefault());
+    // Alch price field (pre-filled if known, or empty for manual entry)
+    const field = document.createElement("div");
+    field.className = "flip-edit-field";
+    const label = document.createElement("label");
+    label.setAttribute("for", "alch-price-input");
+    label.textContent = alchVal
+        ? "High Alch Value (per item)"
+        : "High Alch value unknown — enter manually";
+    const input = document.createElement("input");
+    input.type = "number";
+    input.id = "alch-price-input";
+    input.min = "1";
+    if (alchVal)
+        input.value = String(alchVal);
+    field.appendChild(label);
+    field.appendChild(input);
+    form.appendChild(field);
+    // Live profit preview (no GE tax for alch)
+    const preview = document.createElement("div");
+    preview.className = "complete-flip-preview";
+    const updatePreview = () => {
+        const price = Number(input.value);
+        if (!price || price <= 0) {
+            preview.innerHTML = "";
+            return;
+        }
+        const totalRevenue = price * flip.quantity;
+        const totalCost = flip.buyPrice * flip.quantity;
+        const profit = totalRevenue - totalCost;
+        const cls = profit >= 0 ? "win" : "loss";
+        preview.innerHTML =
+            `<span class="complete-flip-preview-label">Est. Profit:</span> ` +
+                `<span class="flip-detail-value ${cls}">${profit >= 0 ? "+" : ""}${(0,_services__WEBPACK_IMPORTED_MODULE_0__.formatGp)(Math.round(profit))} gp</span>` +
+                `<br><span class="complete-flip-preview-label">Qty:</span> ` +
+                `<span>${flip.quantity.toLocaleString("en-US")}</span>` +
+                `<br><span class="complete-flip-preview-label">No GE tax applied</span>`;
+    };
+    input.addEventListener("input", updatePreview);
+    updatePreview();
+    form.appendChild(preview);
+    // Buttons
+    const btnRow = document.createElement("div");
+    btnRow.className = "flip-edit-actions";
+    const confirmBtn = document.createElement("button");
+    confirmBtn.type = "button";
+    confirmBtn.className = "flip-edit-save";
+    confirmBtn.textContent = "\uD83D\uDD25 Alch & Complete";
+    confirmBtn.addEventListener("click", () => {
+        const price = Number(input.value);
+        if (!price || price <= 0)
+            return;
+        const sellSnap = ranked ? (0,_portfolio_snapshots__WEBPACK_IMPORTED_MODULE_2__.buildSnapshot)(ranked) : undefined;
+        portfolio.completeFlip(flip.id, price, sellSnap, true);
+        hide();
+        _renderFlips();
+        _renderCompletedFlips();
+    });
+    const cancelBtn = document.createElement("button");
+    cancelBtn.type = "button";
+    cancelBtn.className = "flip-edit-cancel";
+    cancelBtn.textContent = "Cancel";
+    cancelBtn.addEventListener("click", hide);
+    btnRow.appendChild(confirmBtn);
+    btnRow.appendChild(cancelBtn);
+    content.appendChild(header);
+    content.appendChild(form);
+    content.appendChild(btnRow);
+    backdrop.classList.add("visible");
+    input.focus();
+    input.select();
 }
 
 
@@ -21156,11 +21399,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _snapshots__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./snapshots */ "./ui/portfolio/snapshots.ts");
 /* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../helpers */ "./ui/helpers.ts");
 /* harmony import */ var _modals_editFlipModal__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../modals/editFlipModal */ "./ui/modals/editFlipModal.ts");
-/* harmony import */ var _state__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../state */ "./ui/state.ts");
+/* harmony import */ var _modals_completeFlipModal__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../modals/completeFlipModal */ "./ui/modals/completeFlipModal.ts");
+/* harmony import */ var _state__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../state */ "./ui/state.ts");
 /**
  * @module ui/flipCard
  * Active flip card DOM assembly, metric calculation, and event wiring.
  */
+
 
 
 
@@ -21181,9 +21426,9 @@ function calcFlipMetrics(flip) {
  * Build and wire a fully interactive flip card element for display in the
  * active flips list.
  */
-function buildFlipCard(flip, renderFlips, renderCompletedFlips) {
+function buildFlipCard(flip, renderFlips) {
     const card = buildFlipCardDOM(flip);
-    wireFlipCardEvents(card, flip, renderFlips, renderCompletedFlips);
+    wireFlipCardEvents(card, flip, renderFlips);
     return card;
 }
 // ─── Internals ──────────────────────────────────────────────────────────────
@@ -21238,8 +21483,8 @@ function buildFlipCardDOM(flip) {
     return card;
 }
 /** Attach all event listeners to a fully-assembled flip card. */
-function wireFlipCardEvents(card, flip, renderFlips, renderCompletedFlips) {
-    const portfolio = (0,_state__WEBPACK_IMPORTED_MODULE_6__.getPortfolio)();
+function wireFlipCardEvents(card, flip, renderFlips) {
+    const portfolio = (0,_state__WEBPACK_IMPORTED_MODULE_7__.getPortfolio)();
     const nameEl = card.querySelector(".flip-item-name");
     nameEl?.addEventListener("click", () => (0,_helpers__WEBPACK_IMPORTED_MODULE_4__.openAnalyticsForName)(flip.itemName));
     card.querySelector(".flip-remove-btn")?.addEventListener("click", () => {
@@ -21247,44 +21492,10 @@ function wireFlipCardEvents(card, flip, renderFlips, renderCompletedFlips) {
         renderFlips();
     });
     card.querySelector(".flip-complete-btn")?.addEventListener("click", () => {
-        const input = prompt(`Enter the actual sell price per item for "${flip.itemName}":`, String(flip.targetSellPrice));
-        if (input === null)
-            return;
-        const price = Number(input);
-        if (!price || price <= 0)
-            return;
-        const ranked = (0,_snapshots__WEBPACK_IMPORTED_MODULE_3__.findRankedItem)(flip.itemName);
-        const sellSnap = ranked ? (0,_snapshots__WEBPACK_IMPORTED_MODULE_3__.buildSnapshot)(ranked) : undefined;
-        portfolio.completeFlip(flip.id, price, sellSnap);
-        renderFlips();
-        renderCompletedFlips();
+        (0,_modals_completeFlipModal__WEBPACK_IMPORTED_MODULE_6__.showCompleteFlipModal)(flip);
     });
     card.querySelector(".flip-alch-btn")?.addEventListener("click", () => {
-        const ranked = (0,_snapshots__WEBPACK_IMPORTED_MODULE_3__.findRankedItem)(flip.itemName);
-        const alchVal = ranked?.highAlch;
-        let alchPrice;
-        if (typeof alchVal === "number" && alchVal > 0) {
-            const totalProfit = (alchVal * flip.quantity) - (flip.buyPrice * flip.quantity);
-            const pfx = totalProfit >= 0 ? "profit" : "loss";
-            if (!confirm(`High Alch ${flip.itemName} at ${alchVal.toLocaleString("en-US")} gp each?\n\n` +
-                `Qty: ${flip.quantity.toLocaleString("en-US")}\n` +
-                `Total ${pfx}: ${totalProfit >= 0 ? "+" : ""}${totalProfit.toLocaleString("en-US")} gp (no GE tax)`))
-                return;
-            alchPrice = alchVal;
-        }
-        else {
-            const input = prompt(`High Alch value unknown for "${flip.itemName}".\nEnter the High Alch value per item:`);
-            if (input === null)
-                return;
-            const parsed = Number(input);
-            if (!parsed || parsed <= 0)
-                return;
-            alchPrice = parsed;
-        }
-        const sellSnap = ranked ? (0,_snapshots__WEBPACK_IMPORTED_MODULE_3__.buildSnapshot)(ranked) : undefined;
-        portfolio.completeFlip(flip.id, alchPrice, sellSnap, true);
-        renderFlips();
-        renderCompletedFlips();
+        (0,_modals_completeFlipModal__WEBPACK_IMPORTED_MODULE_6__.showAlchFlipModal)(flip);
     });
     card.querySelector(".flip-edit-btn")?.addEventListener("click", () => (0,_modals_editFlipModal__WEBPACK_IMPORTED_MODULE_5__.showEditFlipModal)(flip));
 }
@@ -21467,7 +21678,7 @@ function renderFlips() {
         return;
     }
     for (const flip of flips) {
-        container.appendChild((0,_flipCard__WEBPACK_IMPORTED_MODULE_8__.buildFlipCard)(flip, renderFlips, _completedFlips__WEBPACK_IMPORTED_MODULE_7__.renderCompletedFlips));
+        container.appendChild((0,_flipCard__WEBPACK_IMPORTED_MODULE_8__.buildFlipCard)(flip, renderFlips));
     }
 }
 // ─── Timer & Catalogue ──────────────────────────────────────────────────────
