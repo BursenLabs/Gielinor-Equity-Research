@@ -21,8 +21,20 @@ Permissions: Grant the required permissions to finish the install.
 
 ---
 
+## Privacy
+
+Gielinor Equity Research is **local-first and collects no data**.
+
+- All app state — settings, favourites, portfolio, flip history, and price cache — is stored exclusively in your browser's **localStorage** and **IndexedDB**. Nothing is sent to any server.
+- Any LLM API keys you provide are stored only in your browser and are sent directly from your machine to the provider you choose. They are never relayed through a third-party server.
+- The only outbound network requests are to public, read-only endpoints: the daily baseline JSON served from GitHub Pages, the [Weird Gloop API](https://api.weirdgloop.org/#/exchange) for live RS3 GE prices, and the [RS Wiki](https://runescape.wiki) for news headlines. None of these requests include any personally identifiable information.
+- There is no analytics, telemetry, tracking, or crash reporting of any kind.
+
+---
+
 ## Table of Contents
 
+- [Privacy](#privacy)
 - [Features](#features)
   - [Market Data](#market-data)
   - [AI Advisor](#ai-advisor)
