@@ -41,6 +41,7 @@ import {
 } from "./market/marketPanel";
 import { bindSearchFilters } from "./market/marketSearch";
 import { showAnalyticsModal } from "./modals/analyticsModal";
+import { setCompleteFlipRenderHooks } from "./modals/completeFlipModal";
 import { setRenderFlipsHook } from "./modals/editFlipModal";
 import { setRenderCompletedFlipsHook } from "./modals/editCompletedFlipModal";
 import { setRenderMarketItemsHook } from "./modals/modalHooks";
@@ -116,6 +117,7 @@ function wireHooks(): void {
   setShowGuideModalHook(showGuideModal);
   setRenderFlipsHook(renderFlips);
   setRenderCompletedFlipsHook(renderCompletedFlips);
+  setCompleteFlipRenderHooks(renderFlips, renderCompletedFlips);
   setRenderMarketItemsHook(renderMarketItems);
   setRenderFavoritesForViewToggle(renderFavorites);
   setRenderPortfolioDashboardHook(renderPortfolioDashboard);
