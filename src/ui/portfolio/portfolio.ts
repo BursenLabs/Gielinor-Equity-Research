@@ -135,7 +135,7 @@ export function renderFlips(): void {
   }
 
   for (const flip of flips) {
-    container.appendChild(buildFlipCard(flip, renderFlips, renderCompletedFlips));
+    container.appendChild(buildFlipCard(flip, renderFlips));
   }
 }
 
