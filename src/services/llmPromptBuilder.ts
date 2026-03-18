@@ -8,6 +8,8 @@
  */
 
 import { RS3_ECONOMIC_RULES, DATA_FIELD_LEGEND } from "./coreKnowledge";
+import type { RankedItem } from "./types";
+import { formatGp } from "./marketDataFormatter";
 
 /**
  * Build the system message that anchors the LLM to its role and
@@ -78,15 +80,17 @@ export function buildSystemMessage(): string {
  * …free-form query…
  * ```
  *
- * @param query       - Player's question.
- * @param marketData  - Formatted market data block.
- * @param newsContext - Optional formatted news block.
+ * @param query             - Player's question.
+ * @param marketData        - Formatted market data block.
+ * @param newsContext       - Optional formatted news block.
+ * @param allocationContext - Optional current capital allocation plan.
  * @returns The composed user prompt string.
  */
 export function buildUserMessage(
   query: string,
   marketData: string,
   newsContext?: string,
+  allocationContext?: { item: RankedItem; spend: number; qty: number; profit: number }[],
 ): string {
   const parts: string[] = [
     "=== GRAND EXCHANGE DATA ===",
@@ -94,6 +98,18 @@ export function buildUserMessage(
   ];
   if (newsContext) {
     parts.push("", newsContext);
+  }
+  if (allocationContext && allocationContext.length > 0) {
+    const totalSpend = allocationContext.reduce((s, a) => s + a.spend, 0);
+    const totalProfit = allocationContext.reduce((s, a) => s + a.profit, 0);
+    const lines = allocationContext.map(
+      (a) => `- ${a.item.name}: ${a.qty.toLocaleString("en-US")} qty | Capital: ${formatGp(a.spend)} | Est. Profit: +${formatGp(a.profit)}`
+    );
+    parts.push(
+      "",
+      `=== CURRENT CAPITAL ALLOCATION PLAN (Budget: ${formatGp(totalSpend)}, Est. Total Profit: +${formatGp(totalProfit)}) ===`,
+      ...lines,
+    );
   }
   parts.push("", "=== PLAYER QUESTION ===", query);
   return parts.join("\n");

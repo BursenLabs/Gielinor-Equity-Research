@@ -19,7 +19,11 @@ const STRATEGY_HINTS: Record<string, string> = {
   "aggressive": "Maximises total estimated profit \u2014 may concentrate capital into few items.",
 };
 
-let lastAllocations: { item: RankedItem; spend: number; qty: number; profit: number }[] = [];
+export type AllocationEntry = { item: RankedItem; spend: number; qty: number; profit: number };
+
+let lastAllocations: AllocationEntry[] = [];
+
+export function getLastAllocations(): AllocationEntry[] { return lastAllocations; }
 
 // ─── Allocation logic ───────────────────────────────────────────────────────
 
@@ -82,7 +86,7 @@ async function runAllocationAdvisor(): Promise<void> {
   const MAX_GE_SLOTS = 8;
   let remaining = budget;
   const used = new Set<string>();
-  const allocations: { item: typeof candidates[0]["item"]; spend: number; qty: number; profit: number }[] = [];
+  const allocations: AllocationEntry[] = [];
 
   const perItemCap = strategy === "balanced"
     ? Math.floor(budget / Math.min(candidates.length, MAX_GE_SLOTS))

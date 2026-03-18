@@ -211,6 +211,8 @@ RS3 lacks an OSRS-style real-time data source (RuneLite). This tool is designed 
 
 > **Getting started?** Select a provider in Settings and click the **"How to get an API key"** button for a step-by-step guide.
 
+> **Note for Claude / Anthropic users:** Anthropic's API enforces a strict CORS policy that blocks direct browser requests. If you want to use Claude via the **Custom** endpoint, you'll need to route requests through a local CORS proxy (e.g. [local-cors-proxy](https://www.npmjs.com/package/local-cors-proxy) or a simple nginx reverse proxy) and point the custom endpoint at your proxy instead of `api.anthropic.com` directly.
+
 API keys are stored locally in your browser's localStorage — never sent anywhere except to the provider you select.
 
 ---

@@ -72,6 +72,7 @@ export interface Elements {
   reloadStatus: HTMLElement;
   limitResetNotifsToggle: HTMLInputElement;
   newsContextToggle: HTMLInputElement;
+  syncFiltersToggle: HTMLInputElement;
   layoutTabbedBtn: HTMLButtonElement;
   layoutSidebarBtn: HTMLButtonElement;
   styleSelect: HTMLSelectElement;
@@ -214,6 +215,7 @@ export function resolveElements(): void {
     reloadStatus: q("reload-status"),
     limitResetNotifsToggle: q<HTMLInputElement>("limit-reset-notifs-toggle"),
     newsContextToggle: q<HTMLInputElement>("news-context-toggle"),
+    syncFiltersToggle: q<HTMLInputElement>("sync-filters-toggle"),
     layoutTabbedBtn: q<HTMLButtonElement>("layout-tabbed-btn"),
     layoutSidebarBtn: q<HTMLButtonElement>("layout-sidebar-btn"),
     styleSelect: q<HTMLSelectElement>("style-select"),

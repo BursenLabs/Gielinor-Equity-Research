@@ -17,6 +17,7 @@ import type {
   ChatCompletionResponse,
   ChatMessage,
   LLMConfig,
+  RankedItem,
 } from "./types";
 import { buildSystemMessage, buildUserMessage } from "./llmPromptBuilder";
 import {
@@ -122,14 +123,16 @@ export class LLMService {
    * The method appends the user message to the running conversation,
    * sends the full history to the model, and appends the assistant's reply.
    *
-   * @param query       - The player's free-form question
-   *                      (e.g. "What should I flip right now?").
-   * @param marketData  - Pre-formatted top-N market summary string produced
-   *                      by {@link MarketAnalyzerService.formatForLLM}.
-   * @param newsContext - Optional formatted recent RS3 news block from
-   *                      {@link NewsService.formatForLLM}.  Included in the
-   *                      user message so the LLM can correlate price moves
-   *                      with game events.
+   * @param query             - The player's free-form question
+   *                            (e.g. "What should I flip right now?").
+   * @param marketData        - Pre-formatted top-N market summary string produced
+   *                            by {@link MarketAnalyzerService.formatForLLM}.
+   * @param newsContext       - Optional formatted recent RS3 news block from
+   *                            {@link NewsService.formatForLLM}.  Included in the
+   *                            user message so the LLM can correlate price moves
+   *                            with game events.
+   * @param allocationContext - Optional current capital allocation plan, included
+   *                            so the Advisor can reason about the player's budget.
    * @returns The assistant's generated advice text.
    * @throws {LLMRequestError} On HTTP-level failures (401, 429, 5xx, etc.).
    */
@@ -137,8 +140,9 @@ export class LLMService {
     query: string,
     marketData: string,
     newsContext?: string,
+    allocationContext?: { item: RankedItem; spend: number; qty: number; profit: number }[],
   ): Promise<string> {
-    const userMsg = buildUserMessage(query, marketData, newsContext);
+    const userMsg = buildUserMessage(query, marketData, newsContext, allocationContext);
     this._messages.push({ role: "user", content: userMsg });
 
     // Build a trimmed copy of the history for the API payload.
