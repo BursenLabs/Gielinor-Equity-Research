@@ -168,6 +168,11 @@
 							autocomplete="off"
 							spellcheck="false"
 						/>
+						<p class="settings-hint">
+							⚠ Some providers (e.g. <strong>Anthropic / Claude</strong>) block direct browser requests due to their CORS policy.
+							If you see CORS errors, route your requests through a local proxy (such as
+							<code>local-cors-proxy</code> or a simple nginx reverse proxy) and point this URL at the proxy instead.
+						</p>
 					</div>
 
 					<!-- Model selector (searchable datalist) -->
@@ -206,6 +211,14 @@
 						<label class="settings-label toggle-label">
 							<input type="checkbox" id="news-context-toggle" checked />
 							<span>Include RS3 news in advisor context</span>
+						</label>
+					</div>
+
+					<!-- Sync advisor with active filters toggle -->
+					<div class="settings-field" style="margin-top:4px">
+						<label class="settings-label toggle-label">
+							<input type="checkbox" id="sync-filters-toggle" />
+							<span title="When enabled, the Advisor receives only the items currently visible in the Market tab (respecting your volume and budget filters) instead of the default top 50.">Sync Advisor with market filters</span>
 						</label>
 					</div>
 				</fieldset>

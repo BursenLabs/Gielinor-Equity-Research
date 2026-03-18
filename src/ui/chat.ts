@@ -3,11 +3,14 @@
  * LLM chat advisor interface — send, receive, persist, restore.
  */
 
+import { marked } from "marked";
+import DOMPurify from "dompurify";
 import {
   LLMService,
   LLM_PROVIDERS,
   LLMRequestError,
 } from "../services";
+import { formatForLLMCompact } from "../services/marketDataFormatter";
 import {
   LS_API_KEY,
   LS_PROVIDER,
@@ -24,7 +27,9 @@ import {
   getLatestLLMContext,
   getLatestMarketSummary,
   getLatestNewsContext,
+  getLatestTopItems,
 } from "./state";
+import { getLastAllocations } from "./allocation";
 
 // ─── LLM Instance ───────────────────────────────────────────────────────────
 
@@ -66,7 +71,12 @@ function appendMessage(
   const els = getEls();
   const div = document.createElement("div");
   div.className = `chat-msg ${kind}`;
-  div.textContent = text;
+  if (kind === "assistant") {
+    const raw = marked.parse(text) as string;
+    div.innerHTML = DOMPurify.sanitize(raw, { USE_PROFILES: { html: true } });
+  } else {
+    div.textContent = text;
+  }
   els.chatHistory.appendChild(div);
   scrollChatToBottom();
   return div;
@@ -124,11 +134,24 @@ async function handleSend(): Promise<void> {
   try {
     const service = ensureLLMService();
     const newsCtx = els.newsContextToggle.checked ? getLatestNewsContext() : undefined;
-    const advice = await service.generateAdvice(
-      query,
-      getLatestLLMContext() || getLatestMarketSummary(),
-      newsCtx,
-    );
+
+    // Build market context: use UI-filtered items if the sync toggle is on,
+    // otherwise fall back to the pre-built full top-50 context.
+    let marketCtx: string;
+    if (els.syncFiltersToggle.checked) {
+      const filtered = getLatestTopItems();
+      marketCtx = filtered.length > 0
+        ? formatForLLMCompact(filtered)
+        : getLatestLLMContext() || getLatestMarketSummary();
+    } else {
+      marketCtx = getLatestLLMContext() || getLatestMarketSummary();
+    }
+
+    // Include the most recent Capital Allocation plan when one exists.
+    const allocations = getLastAllocations();
+    const allocCtx = allocations.length > 0 ? allocations : undefined;
+
+    const advice = await service.generateAdvice(query, marketCtx, newsCtx, allocCtx);
     removeMessage(thinkingEl);
     appendMessage("assistant", advice);
 

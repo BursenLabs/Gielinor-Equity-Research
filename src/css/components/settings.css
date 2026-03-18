@@ -93,6 +93,29 @@
   color: var(--accent-red);
 }
 
+.settings-hint {
+  margin: 4px 0 0;
+  font-size: 11px;
+  line-height: 1.5;
+  color: var(--text-muted);
+  background: var(--accent-yellow-bg, rgba(255, 200, 50, 0.08));
+  border: 1px solid var(--accent-yellow-border, rgba(255, 200, 50, 0.25));
+  border-radius: var(--radius-sm);
+  padding: 6px 8px;
+}
+
+.settings-hint strong {
+  color: var(--text-main);
+}
+
+.settings-hint code {
+  font-family: monospace;
+  font-size: 10px;
+  background: var(--bg-surface-2, rgba(255,255,255,0.06));
+  padding: 1px 4px;
+  border-radius: 3px;
+}
+
 /* -- Danger button ---------------------------------------------------------- */
 
 .danger-btn {
